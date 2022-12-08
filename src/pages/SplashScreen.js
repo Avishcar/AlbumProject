@@ -13,11 +13,14 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SplashScreen=({navigation })=>{
+  
   useEffect(()=>{
     setTimeout(()=>{
       navigation.navigate("PeopleScreen")
-    },2000)
+    },3000)
   },[])
+
+
   return(
     <View style={styles.container}>
        <Image

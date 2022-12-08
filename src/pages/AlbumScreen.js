@@ -28,16 +28,13 @@ const AlbumScreen = ({ route, navigation }) => {
     const [username, setusername] = useState("")
 
     useEffect(() => {
-
         storeData()
-
-        
     }, [])
 
     const storeData = async() => {
         try {
             await AsyncStorage.setItem('ScreenName',"AlbumScreen")
-            console.log("try done")
+            console.log("AlbumScreen try done")
           } catch (e) {
             // saving error
             console.log("async error",e)
@@ -50,7 +47,7 @@ const AlbumScreen = ({ route, navigation }) => {
         setusername(name)
         getMoviesFromApi("albums?userId=" + id)
             .then((res) => {
-                console.log("res", res)
+                // console.log("res", res)
                 setalbum(res)
                 imageAPI(res[0].id)
                 setloading(false)
@@ -61,7 +58,6 @@ const AlbumScreen = ({ route, navigation }) => {
     const imageAPI = (alubmID) => {
         getMoviesFromApi("photos?albumId=" + alubmID)
             .then((res) => {
-                console.log("setimages", res)
                 setimages(res)
                 setloading(false)
             })

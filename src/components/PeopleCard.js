@@ -23,7 +23,7 @@ const PeopleCard = ({ data }) => {
         try {
             await AsyncStorage.setItem('id', JSON.stringify(data.id) )
             await AsyncStorage.setItem('name', data.name)
-            console.log("try done")
+            console.log("id and name try done")
           } catch (e) {
             // saving error
             console.log("async error",e)

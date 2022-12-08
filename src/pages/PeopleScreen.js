@@ -23,7 +23,6 @@ const PeopleScreen = ({ navigation }) => {
     useEffect(() => {
 
         
-
         storeData()
         getMoviesFromApi("users")
             .then((res) => {
@@ -33,12 +32,14 @@ const PeopleScreen = ({ navigation }) => {
             .catch((err) => console.log(err));
 
 
-    },)
+    },[])
+
+   
 
     const storeData = async() => {
          try {
             await AsyncStorage.setItem('ScreenName',"PeopleScreen")
-            console.log("try done")
+            console.log("PeopleScreen try done")
           } catch (e) {
             // saving error
             console.log("async error",e)
